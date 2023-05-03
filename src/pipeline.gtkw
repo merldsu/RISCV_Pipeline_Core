@@ -1,0 +1,128 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Wed May  3 06:16:33 2023
+[*]
+[dumpfile] "/home/hshabbir/tutorials/RISCV_Pipeline_Core/src/dump.vcd"
+[dumpfile_mtime] "Wed May  3 06:14:08 2023"
+[dumpfile_size] 16068
+[savefile] "/home/hshabbir/tutorials/RISCV_Pipeline_Core/src/pipeline.gtkw"
+[timestart] 0
+[size] 1848 1016
+[pos] -39 -39
+*0.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb.
+[treeopen] tb.dut.
+[sst_width] 233
+[signals_width] 250
+[sst_expanded] 1
+[sst_vpaned_height] 579
+@800200
+-Global Inputs
+@28
+tb.clk
+tb.rst
+@1000200
+-Global Inputs
+@800200
+-Fetch_Cycle
+@28
+tb.dut.PCSrcE
+@22
+tb.dut.PCTargetE[31:0]
+tb.dut.PCD[31:0]
+tb.dut.InstrD[31:0]
+tb.dut.PCPlus4D[31:0]
+@1000200
+-Fetch_Cycle
+@800200
+-Decode_Cycle
+@22
+tb.dut.PCE[31:0]
+tb.dut.PCPlus4E[31:0]
+tb.dut.RD_E[4:0]
+@28
+tb.dut.ALUControlE[2:0]
+tb.dut.ALUSrcE
+tb.dut.BranchE
+tb.dut.MemWriteE
+tb.dut.RegWriteE
+tb.dut.ResultSrcE
+@c00022
+tb.dut.RD1_E[31:0]
+@28
+(0)tb.dut.RD1_E[31:0]
+(1)tb.dut.RD1_E[31:0]
+(2)tb.dut.RD1_E[31:0]
+(3)tb.dut.RD1_E[31:0]
+(4)tb.dut.RD1_E[31:0]
+(5)tb.dut.RD1_E[31:0]
+(6)tb.dut.RD1_E[31:0]
+(7)tb.dut.RD1_E[31:0]
+(8)tb.dut.RD1_E[31:0]
+(9)tb.dut.RD1_E[31:0]
+(10)tb.dut.RD1_E[31:0]
+(11)tb.dut.RD1_E[31:0]
+(12)tb.dut.RD1_E[31:0]
+(13)tb.dut.RD1_E[31:0]
+(14)tb.dut.RD1_E[31:0]
+(15)tb.dut.RD1_E[31:0]
+(16)tb.dut.RD1_E[31:0]
+(17)tb.dut.RD1_E[31:0]
+(18)tb.dut.RD1_E[31:0]
+(19)tb.dut.RD1_E[31:0]
+(20)tb.dut.RD1_E[31:0]
+(21)tb.dut.RD1_E[31:0]
+(22)tb.dut.RD1_E[31:0]
+(23)tb.dut.RD1_E[31:0]
+(24)tb.dut.RD1_E[31:0]
+(25)tb.dut.RD1_E[31:0]
+(26)tb.dut.RD1_E[31:0]
+(27)tb.dut.RD1_E[31:0]
+(28)tb.dut.RD1_E[31:0]
+(29)tb.dut.RD1_E[31:0]
+(30)tb.dut.RD1_E[31:0]
+(31)tb.dut.RD1_E[31:0]
+@1401200
+-group_end
+@22
+tb.dut.RD2_E[31:0]
+tb.dut.Imm_Ext_E[31:0]
+@1000200
+-Decode_Cycle
+@800200
+-Execute_Cycle
+@22
+tb.dut.PCPlus4M[31:0]
+tb.dut.RD_M[4:0]
+@28
+tb.dut.MemWriteM
+tb.dut.RegWriteM
+tb.dut.ResultSrcM
+@22
+tb.dut.ALU_ResultM[31:0]
+tb.dut.WriteDataM[31:0]
+@1000200
+-Execute_Cycle
+@800200
+-Memory
+@22
+tb.dut.PCPlus4W[31:0]
+@28
+tb.dut.ResultSrcW
+@23
+tb.dut.ALU_ResultW[31:0]
+@22
+tb.dut.ReadDataW[31:0]
+@1000200
+-Memory
+@800200
+-Register Writeback
+@28
+tb.dut.RegWriteW
+@22
+tb.dut.RDW[4:0]
+tb.dut.ResultW[31:0]
+@1000200
+-Register Writeback
+[pattern_trace] 1
+[pattern_trace] 0

@@ -12,11 +12,6 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-`include "PC.v"
-`include "PC_Adder.v"
-`include "Mux.v"
-`include "Instruction_Memory.v"
-
 module fetch_cycle(clk, rst, PCSrcE, PCTargetE, InstrD, PCD, PCPlus4D);
 
     // Declare input & outputs

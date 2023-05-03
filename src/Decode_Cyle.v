@@ -12,9 +12,6 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-`include "Control_Unit_Top.v"
-`include "Register_File.v"
-`include "Sign_Extend.v"
 
 module decode_cycle(clk, rst, InstrD, PCD, PCPlus4D, RegWriteW, RDW, ResultW, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE,
     BranchE,  ALUControlE, RD1_E, RD2_E, Imm_Ext_E, RD_E, PCE, PCPlus4E);

@@ -12,10 +12,6 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-`include "ALU.v"
-`include "Mux.v"
-`include "PC_Adder.v"
-
 module execute_cycle(clk, rst, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, ALUControlE, 
     RD1_E, RD2_E, Imm_Ext_E, RD_E, PCE, PCPlus4E, PCSrcE, PCTargetE, RegWriteM, MemWriteM, ResultSrcM, RD_M, PCPlus4M, WriteDataM, ALU_ResultM);
 
@@ -93,12 +89,12 @@ module execute_cycle(clk, rst, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, Branch
 
     // Output Assignments
     assign PCSrcE = ZeroE &  BranchE;
-    assign RegWriteM = RegWriteE;
-    assign MemWriteM = MemWriteE;
-    assign ResultSrcM = ResultSrcE;
-    assign RD_M = RD_E;
-    assign PCPlus4M = PCPlus4E;
-    assign WriteDataM = RD2_E;
+    assign RegWriteM = RegWriteE_r;
+    assign MemWriteM = MemWriteE_r;
+    assign ResultSrcM = ResultSrcE_r;
+    assign RD_M = RD_E_r;
+    assign PCPlus4M = PCPlus4E_r;
+    assign WriteDataM = RD2_E_r;
     assign ALU_ResultM = ResultE_r;
 
 endmodule
