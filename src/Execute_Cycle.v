@@ -13,7 +13,7 @@
 //    limitations under the License.
 
 module execute_cycle(clk, rst, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, ALUControlE, 
-    RD1_E, RD2_E, Imm_Ext_E, RD_E, PCE, PCPlus4E, PCSrcE, PCTargetE, RegWriteM, MemWriteM, ResultSrcM, RD_M, PCPlus4M, WriteDataM, ALU_ResultM);
+    RD1_E, RD2_E, Imm_Ext_E, RD_E, PCE, PCPlus4E, PCSrcE, PCTargetE, RegWriteM, MemWriteM, ResultSrcM, RD_M, PCPlus4M, WriteDataM, ALU_ResultM, ResultW);
 
     // Declaration I/Os
     input clk, rst, RegWriteE,ALUSrcE,MemWriteE,ResultSrcE,BranchE;
@@ -21,6 +21,7 @@ module execute_cycle(clk, rst, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, Branch
     input [31:0] RD1_E, RD2_E, Imm_Ext_E;
     input [4:0] RD_E;
     input [31:0] PCE, PCPlus4E;
+    input [31:0] ResultW;
 
     output PCSrcE, RegWriteM, MemWriteM, ResultSrcM;
     output [4:0] RD_M; 
