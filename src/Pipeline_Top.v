@@ -26,6 +26,7 @@
 `include "Sign_Extend.v"
 `include "ALU.v"
 `include "Data_Memory.v"
+`include "Hazard_unit.v"
 
 
 module Pipeline_top(clk, rst);
@@ -39,6 +40,9 @@ module Pipeline_top(clk, rst);
     wire [4:0] RD_E, RD_M, RDW;
     wire [31:0] PCTargetE, InstrD, PCD, PCPlus4D, ResultW, RD1_E, RD2_E, Imm_Ext_E, PCE, PCPlus4E, PCPlus4M, WriteDataM, ALU_ResultM;
     wire [31:0] PCPlus4W, ALU_ResultW, ReadDataW;
+    wire [4:0] RS1_E, RS2_E;
+    wire [1:0] ForwardBE, ForwardAE;
+    
 
     // Module Initiation
     // Fetch Stage
@@ -73,7 +77,9 @@ module Pipeline_top(clk, rst);
                         .Imm_Ext_E(Imm_Ext_E), 
                         .RD_E(RD_E), 
                         .PCE(PCE), 
-                        .PCPlus4E(PCPlus4E)
+                        .PCPlus4E(PCPlus4E),
+                        .RS1_E(RS1_E),
+                        .RS2_E(RS2_E)
                     );
 
     // Execute Stage
@@ -100,7 +106,10 @@ module Pipeline_top(clk, rst);
                         .RD_M(RD_M), 
                         .PCPlus4M(PCPlus4M), 
                         .WriteDataM(WriteDataM), 
-                        .ALU_ResultM(ALU_ResultM)
+                        .ALU_ResultM(ALU_ResultM),
+                        .ResultW(ResultW),
+                        .ForwardA_E(ForwardAE),
+                        .ForwardB_E(ForwardBE)
                     );
     
     // Memory Stage
@@ -132,4 +141,17 @@ module Pipeline_top(clk, rst);
                         .ReadDataW(ReadDataW), 
                         .ResultW(ResultW)
                     );
+
+    // Hazard Unit
+    hazard_unit Forwarding_block (
+                        .rst(rst), 
+                        .RegWriteM(RegWriteM), 
+                        .RegWriteW(RegWriteW), 
+                        .RD_M(RD_M), 
+                        .RD_W(RDW), 
+                        .Rs1_E(RS1_E), 
+                        .Rs2_E(RS2_E), 
+                        .ForwardAE(ForwardAE), 
+                        .ForwardBE(ForwardBE)
+                        );
 endmodule
